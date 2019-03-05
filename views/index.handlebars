@@ -1,0 +1,53 @@
+<div class="header">
+<h1>Lets Try Code Burgers!</h1>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center" id="top-bar">
+      <h1>Eat Da Burger!</h1>
+    </div>
+    <div class="col-xs-6 text-center" class="task">
+      <div class="row">
+        {{!-- Looping trough the table and rendering data on browser with devoured button--}}
+        {{#each hbsObject}}
+        {{#unless this.devoured}}
+        <div class="col-xs-9 text-center">
+          <pre>{{this.id}}.{{this.burger_name}}</pre>
+        </div>
+        <div class="col-xs-3 text-center">
+          <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
+            <input type="hidden" name="burger_id" type="text" value={{this.id}}>
+            <br>
+            <button type="submit" class="btn btn-default">DEVOUR IT!</button>
+          </form>
+        </div>
+        {{/unless}}
+        {{/each}}
+      </div>
+    </div>
+    <br>
+    {{!-- Creating a form to render the devoured burger --}}
+    <div class="col-xs-6 text-center" class="task">
+      {{#each hbsObject}}
+      {{#if this.devoured}}
+      <input class="form-control" type="text" placeholder="{{this.id}}.{{this.burger_name}}" readonly>
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+<br>
+{{!-- creating a form for submitting the desired burger!--}}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center enter_section">
+      <form action="/burgers/create" method="POST">
+      <input type="text" name="burger_name" class="form-control" value="" id="enter_text">
+      <button type="submit" class="btn btn-primary" id="text-enter-button">SUBMIT</button>
+      </form>
+      <p>Enter in a burger you would like to eat!</p>
+    </div>
+  </div>
+</div>
+

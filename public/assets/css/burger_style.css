@@ -1,0 +1,19 @@
+.header, .container {
+    text-align: center;
+}
+body {
+    background-color: yellow;
+    background-image: url("../img/myburger.jpg");
+    background-repeat: no-repeat;
+    background-size: 2in;
+    padding: 15px;
+}
+button {
+    background-color: red;
+    color: yellow;
+}
+h1,p {
+    color: red
+}
+
+
