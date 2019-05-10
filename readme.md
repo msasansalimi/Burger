@@ -8,4 +8,6 @@
 
 ####Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
 
-####Your app will store every burger in a database, whether devoured or not.
+####This app will store every burger in a database, whether devoured or not.
+
+#### I have deployed this assignment to Heroku. Visit deployed version [Here!](https://shielded-brushlands-57204.herokuapp.com/).
